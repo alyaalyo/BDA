@@ -1,0 +1,37 @@
+{
+  "data": {
+    "features_path": "data/processed/features.parquet",
+    "churn_path": "data/out/reference/churn_truth.csv",
+    "raw_root": "data/out",
+    "cutoff_date": "2025-11-15",
+    "last_partition_date": "2025-11-16"
+  },
+  "preprocessing": {
+    "test_size": 0.2,
+    "val_size": 0.2,
+    "random_state": 42
+  },
+  "model": {
+    "n_estimators": 100,
+    "max_depth": 10,
+    "min_samples_split": 2,
+    "min_samples_leaf": 1,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "evaluation": {
+    "threshold": 0.5
+  },
+  "artifacts": {
+    "model_dir": "artifacts",
+    "model_name": "best_model.pkl",
+    "scaler_name": "scaler.pkl",
+    "features_name": "features.json",
+    "metrics_name": "metrics.json"
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(levelname)s - %(message)s",
+    "path": "artifacts/pipeline.log"
+  }
+}
